@@ -7,15 +7,24 @@
   <body>
     <h1 id="tanaka">JavaScript test</h1>
 
-    <button onclick="aloha()">CLICK ME!</button>
-
-    <img id="gazo" src="neko.jpg">
+    <img id="gazo" src="neko.jpg" onclick="aloha()">
 
     <script>
+      let num = 0
+
       // aloha()関数をつくる
       function aloha() {
+        // 画像ファイル
+        const files = ['neko.jpg', 'inu.jpg', 'kapi.jpg']
+
+        // 画像を変更する 
+        num++
+        if( num >= files.length ) {
+          num = 0
+        }
+
         let gazo = document.getElementById('gazo')
-        gazo.src = 'inu.jpg'
+        gazo.src = files[num]
       }
     </script>
   </body>
